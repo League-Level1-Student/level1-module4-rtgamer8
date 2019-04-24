@@ -13,8 +13,8 @@ public class calculator implements ActionListener {
 	JButton three = new JButton();
 	JButton two = new JButton();
 	JLabel label = new JLabel();
-	JTextField text = new JTextField();
-	JTextField text1 = new JTextField();
+	JTextField text = new JTextField(20);
+	JTextField text1 = new JTextField(20);
 
 	public static void main(String[] args) {
 		calculator c = new calculator();
@@ -64,8 +64,21 @@ public class calculator implements ActionListener {
 		String b = text1.getText();
 		int c = Integer.parseInt(a);
 		int d = Integer.parseInt(b);
+
 		if (one == press) {
 			label.setText((c * d) + "");
+		}
+
+		if (two == press) {
+			label.setText((c + d) + "");
+		}
+
+		if (three == press) {
+			label.setText((c / d) + "");
+		}
+
+		if (four == press) {
+			label.setText((c - d) + "");
 		}
 
 	}
