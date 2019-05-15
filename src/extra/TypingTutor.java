@@ -6,15 +6,19 @@ import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class TypingTutor implements KeyListener {
 	JLabel label = new JLabel();
 	char currentLetter;
 	JFrame frame = new JFrame();
+JPanel panel = new JPanel();
+
 
 	TypingTutor() {
+frame.add(panel);
 
-		frame.add(label);
+		panel.add(label);
 		frame.setName("Type or Die");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -57,7 +61,7 @@ public class TypingTutor implements KeyListener {
 			currentLetter = generateRandomLetter();
 			label.setText(currentLetter + "");
 
-			frame.setBackground(Color.GREEN);
+			panel.setBackground(Color.GREEN);
 
 		}
 
@@ -65,7 +69,7 @@ public class TypingTutor implements KeyListener {
 			System.out.println("you are wrong");
 			currentLetter = generateRandomLetter();
 			label.setText(currentLetter + "");
-			frame.setBackground(Color.red);
+			panel.setBackground(Color.red);
 		}
 		frame.pack();
 		System.out.println("You Typed: " + e.getKeyChar());
