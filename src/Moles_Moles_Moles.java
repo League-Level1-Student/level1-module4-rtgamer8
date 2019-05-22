@@ -11,11 +11,15 @@ import javax.swing.JPanel;
 public class Moles_Moles_Moles implements ActionListener {
 	JFrame frame = new JFrame();
 	 Date timeAtBegining = new Date();
-	 int molesPressed = new int();
+	 int molesPressed = 0;
 	JButton moleButton = new JButton("Mole");
 
 	JPanel panel = new JPanel();
-
+Moles_Moles_Moles(){
+	moleButton.addActionListener(this);
+	
+	
+}
 	public static void main(String[] args) {
 
 		Moles_Moles_Moles m = new Moles_Moles_Moles();
@@ -30,7 +34,7 @@ public class Moles_Moles_Moles implements ActionListener {
 		for (int i = 0; i < 24; i++) {
 			if (i == molePos) {
 				panel.add(moleButton);
-				moleButton.addActionListener(this);
+				
 			} else {
 				JButton b = new JButton();
 				b.addActionListener(this);
@@ -63,16 +67,16 @@ void speak(String words) {
 speak("Congrats you hit the right button ");
 		}
 		else {
-			speak("Congrats you hit the wrong button...Again....Siggghhhh ");	
+			speak("Congrats you hit the wrong button...Again ");	
 		}
 		
 		
 		
 		
-		if(++buttonPressed==10) {
-			endGame(timeAtBegining,)
-		}
+		if(++molesPressed==10){
+			endGame(timeAtBegining, molesPressed);
 		
+	 }
 		
 		
 		frame.dispose();
