@@ -2,6 +2,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Random;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -10,14 +11,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class slots implements ActionListener {
+public class Slots implements ActionListener {
 	
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	JButton button = new JButton();
 public static void main(String[] args) {
 	
-	slots slot = new slots();
+	Slots slot = new Slots();
 	
 	slot.run();
 
@@ -33,14 +34,17 @@ public void run() {
 	frame.setVisible(true);
 	
 try {
-	createLabelImage("cherry.jpg");
+JLabel label =	createLabelImage("cherry.jpg");
+panel.add(label);
 } catch (MalformedURLException e) {
 	// TODO Auto-generated catch block
+	
 	e.printStackTrace();
 }
 	
 try {
-	createLabelImage("lime .png");
+	JLabel label1 =createLabelImage("lime .png");
+	panel.add(label1);
 } catch (MalformedURLException e) {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
@@ -48,7 +52,9 @@ try {
 		
 	
 try {
-	createLabelImage("orange.png");
+	JLabel label2 =	createLabelImage("orange.png");
+
+panel.add(label2);
 } catch (MalformedURLException e) {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
@@ -60,6 +66,130 @@ button.setText("Press for a chance to win it all!");
 //frame.getDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 
 button.addActionListener((ActionListener) this);
+
+
+Random random = new Random();
+int reel1 = random.nextInt(3);
+try {
+if(reel1 ==1) {
+	JLabel label1 =createLabelImage("lime .png");
+	panel.add(label1);
+	
+}
+
+if(reel1 ==2) {
+	JLabel label1 =createLabelImage("orange .png");
+	panel.add(label1);
+	
+}
+
+
+if(reel1 ==3) {
+	JLabel label1 =createLabelImage("cherry .jpg");
+	panel.add(label1);
+	
+}
+} catch (MalformedURLException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Random random1 = new Random();
+int reel2 = random1.nextInt(3);
+try {
+if(reel2 ==1) {
+	JLabel label1 =createLabelImage("lime .png");
+	panel.add(label1);
+	
+}
+
+if(reel2 ==2) {
+	JLabel label1 =createLabelImage("orange .png");
+	panel.add(label1);
+	
+}
+
+
+if(reel2 ==3) {
+	JLabel label1 =createLabelImage("cherry .jpg");
+	panel.add(label1);
+	
+}
+} catch (MalformedURLException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+
+
+
+
+
+
+
+
+
+
+Random random2 = new Random();
+int reel3 = random2.nextInt(3);
+try {
+if(reel3 ==1) {
+	JLabel label1;
+
+		label1 = createLabelImage("lime .png");
+	
+	panel.add(label1);
+	
+}
+
+if(reel3 ==2) {
+	JLabel label1 =createLabelImage("orange .png");
+	panel.add(label1);
+	
+}
+
+
+if(reel3 ==3) {
+	JLabel label1 =createLabelImage("cherry .jpg");
+	panel.add(label1);
+	
+}
+} catch (MalformedURLException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
